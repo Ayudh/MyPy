@@ -10,8 +10,6 @@ folder_name = 'Spotlight-Images-'+str(datetime.datetime.now().strftime("%Y-%m-%d
 dest_path = os.path.join(dest_path, folder_name)
 os.mkdir(dest_path)
 
-count = 0
 for file in os.listdir(src_path):
   if os.path.getsize(os.path.join(src_path, file)) > 139175L:
-    shutil.copy(os.path.join(src_path, file), os.path.join(dest_path, str(count)+'.jpg'))
-    count = count + 1
+    shutil.copy(os.path.join(src_path, file), os.path.join(dest_path, file +'.jpg'))
